@@ -1,0 +1,68 @@
+
+html {
+font-size: 10px;
+}
+.recent-track {
+  font-size: 1.5rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  background-color:#4496ea;
+  padding:5;
+  border-radius:20px;
+}
+.recent-track__body {
+  display: inline-block;
+  padding-left: 1rem;
+  padding-right: 1rem;
+	  
+}
+.recent-track__name, .recent-track__artist, .recent-track__album {
+  display: inline;
+}
+.recent-track__icon {
+  width: 18px;
+  height: 14px;
+  position: relative;
+  display: flex;
+  padding-left: 1rem;
+}
+.recent-track__icon span {
+  height: 100%;
+  width: 2px;
+  background: white;
+  transform-origin: bottom;
+  margin: 1px;
+}
+.recent-track__icon span:nth-child(1) {
+  animation: sound1 0.6s infinite ease-in;
+}
+.recent-track__icon span:nth-child(2) {
+  animation: sound2 0.6s infinite ease-in;
+}
+.recent-track__icon span:nth-child(3) {
+  animation: sound3 0.6s infinite ease-in;
+}
+.recent-track__icon span:nth-child(4) {
+  animation: sound4 0.6s infinite ease-in;
+}
+@keyframes sound1 {
+  20% {
+    transform: scaleY(0.5);
+  }
+}
+@keyframes sound2 {
+  40% {
+    transform: scaleY(0.5);
+  }
+}
+@keyframes sound3 {
+  60% {
+    transform: scaleY(0.5);
+  }
+}
+@keyframes sound4 {
+  80% {
+    transform: scaleY(0.5);
+  }
+}

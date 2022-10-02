@@ -1,0 +1,48 @@
+<script>
+    
+    var intervalId = window.setInterval(function(){
+ 
+ metadata()
+ 
+ 
+}, 7000);
+    function metadata(){
+    $.getJSON('https://scraper2.onlineradiobox.com/es.barcelona?l=1640031274', function(data) {
+        
+        var text = `${data.title}`
+                    
+        
+        $(".artisttxt").html(text);
+        
+        
+        
+        $.getJSON("https://itunes.apple.com/search?term=" + text   
+                        + "&limit=1&media=music&entity=song&callback=?", function (data) {
+
+    var icon = document.getElementById("WallpaperIcon");
+    var itunes = document.getElementById("itunes");
+    itunes.href = data.results[0].trackViewUrl;
+    icon.src = data.results[0].artworkUrl100;
+    
+    
+    
+});
+
+    });
+     $.ajax({
+   url: 'https://barcelonahits.ml/ESTAMOSDIRECTO.txt',
+   type: 'HEAD',
+   error: function() {
+      	$(".singer").hide();
+      	document.getElementById("shadowdirecto").style["boxShadow"]="0px 0px 20px 20px #3e6c62";
+   },
+   success: function() {
+     	$(".singer").show();
+     	document.getElementById("shadowdirecto").style["boxShadow"]="0px 0px 20px 20px #ff0000";
+   }
+}); 
+        
+  
+        
+    }
+    </script>
