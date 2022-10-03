@@ -1,1 +1,161 @@
-<<html><head><meta charset="UTF-8"><title>Barcelona Hits | Player</title><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap"><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" type="text/css" href="styles.css"><link rel="stylesheet" type="text/css" href="nowplaying.css"><script src="https://code.jquery.com/jquery-3.5.0.js"></script><script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8009724965525144" crossorigin="anonymous"></script></head><body style="background-image: -webkit-linear-gradient(0deg, #691cff 0%, #f51cb0 100%)"><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2CB79G"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><center><h1 style="color:white; font-size: 45px;padding-top: 15;">LIVE PLAYER</h1></center><br><br><div id="shadowdirecto" class="player"><div class="cover"><img id="WallpaperIcon" src="https://barcelonahits.ml/bg_album_art.png" alt="Artwork"></div><div class="singer">⚪ Live Program</div><div class="info"><a id="itunes" href="#" target="_blank"><div class="title artisttxt">Sonando Ahora</div></a></div><div class="volume-box"><span class="volume-down"><i class="material-icons">remove</i></span><input type="range" class="volume-range" step="1" value="100" min="0" max="100" oninput="music.volume = this.value/100"><span class="volume-up"><i class="material-icons">add</i></span></div><div class="btn-box"><audio class="music-element" mcafee_wa_processedvideo="true"><source src="https://node-02.zeno.fm/fq3qwvw6g2zuv?zs=kiKoWz61TH2yYmuZ64cjcQ&amp;rj-tok=AAABgdAjsSUADz82onGx8SA2_w&amp;rj-ttl=5"></audio><span id="PLAY" class="play" onclick="handlePlay(); dataLayer.push({'event': 'PLAY_RADIO'});"><i class="material-icons">play_arrow</i></span><i class="material-icons volume" onclick="handleVolume()">volume_up</i></div><div class="music-box"></div></div><script>    // playervar music = document.querySelector('.music-element')var playBtn = document.querySelector('.play')function handlePlay() {    if (music.paused) {        music.play();        playBtn.className = 'pause'        playBtn.innerHTML = '<i class="material-icons">pause</i>'    } else {        music.pause();        playBtn.className = 'play'        playBtn.innerHTML = '<i class="material-icons">play_arrow</i>'    }    music.addEventListener('ended', function () {        playBtn.className = 'play'        playBtn.innerHTML = '<i class="material-icons">play_arrow</i>'        music.currentTime = 0    });}// volumevar volIcon = document.querySelector('.volume')var volBox = document.querySelector('.volume-box')var volumeRange = document.querySelector('.volume-range')var volumeDown = document.querySelector('.volume-down')var volumeUp = document.querySelector('.volume-up')function handleVolume() {    volIcon.classList.toggle('active')    volBox.classList.toggle('active')}volumeDown.addEventListener('click', handleVolumeDown);volumeUp.addEventListener('click', handleVolumeUp);function handleVolumeDown() {    volumeRange.value = Number(volumeRange.value) - 20    music.volume = volumeRange.value / 100}function handleVolumeUp() {    volumeRange.value = Number(volumeRange.value) + 20    music.volume = volumeRange.value / 100}</script><script>    setInterval(function() {                                     $.ajax({        url: 'https://barcelonahits.ml/Metadata.php',        success: function(data) {               var textWithQuote = data;            var t = textWithQuote.split('"')[1];      $(".artisttxt").html(t);      document.querySelector('title').textContent = t;                     $.getJSON("https://itunes.apple.com/search?term=" + t + "&limit=1&media=music&entity=song&callback=?", function (data) {                 var icon = document.getElementById("WallpaperIcon");                 var itunes = document.getElementById("itunes");                itunes.href = data.results[0].trackViewUrl;                icon.src = data.results[0].artworkUrl100;                                              });                                }        });     $.ajax({   url: 'https://barcelonahits.ml/ESTAMOSDIRECTO.txt',   type: 'HEAD',   error: function() {      	$(".singer").hide();      	document.getElementById("shadowdirecto").style["boxShadow"]="20px 5px 40px #cf77f3, 0px 5px 40px #009bff, -20px 5px 40px #2ac9db;";   },   success: function() {     	$(".singer").show();     	document.getElementById("shadowdirecto").style["boxShadow"]="0px 0px 20px 20px #ff0000";   }});                     }, 15000);</script></body></html>
+<<html><head>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W2CB79G');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="UTF-8">
+<title>Barcelona Hits | Player</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="stylesheet" type="text/css" href="nowplaying.css">
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8009724965525144" crossorigin="anonymous"></script>
+</head>
+<body style="background-image: -webkit-linear-gradient(0deg, #691cff 0%, #f51cb0 100%)">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2CB79G"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<center><h1 style="color:white; font-size: 45px;padding-top: 15;">LIVE PLAYER</h1></center>
+<br><br>
+<div id="shadowdirecto" class="player">
+<div class="cover">
+<img id="WallpaperIcon" src="https://barcelonahits.ml/bg_album_art.png" alt="Artwork">
+</div>
+<div class="singer">⚪ Live Program</div>
+<div class="info">
+<a id="itunes" href="#" target="_blank"><div class="title artisttxt">
+Sonando Ahora
+</div></a>
+</div>
+<div class="volume-box">
+<span class="volume-down"><i class="material-icons">remove</i></span>
+<input type="range" class="volume-range" step="1" value="100" min="0" max="100" oninput="music.volume = this.value/100">
+<span class="volume-up"><i class="material-icons">add</i></span>
+</div>
+<div class="btn-box">
+<audio class="music-element" mcafee_wa_processedvideo="true">
+<source src="https://node-02.zeno.fm/fq3qwvw6g2zuv?zs=kiKoWz61TH2yYmuZ64cjcQ&amp;rj-tok=AAABgdAjsSUADz82onGx8SA2_w&amp;rj-ttl=5">
+</audio>
+<span id="PLAY" class="play" onclick="handlePlay(); dataLayer.push({'event': 'PLAY_RADIO'});">
+<i class="material-icons">play_arrow</i>
+</span>
+<i class="material-icons volume" onclick="handleVolume()">volume_up</i>
+</div>
+<div class="music-box">
+</div>
+</div>
+<script>
+    // player
+var music = document.querySelector('.music-element')
+var playBtn = document.querySelector('.play')
+
+
+
+function handlePlay() {
+    if (music.paused) {
+        music.play();
+        playBtn.className = 'pause'
+        playBtn.innerHTML = '<i class="material-icons">pause</i>'
+    } else {
+        music.pause();
+        playBtn.className = 'play'
+        playBtn.innerHTML = '<i class="material-icons">play_arrow</i>'
+    }
+    music.addEventListener('ended', function () {
+        playBtn.className = 'play'
+        playBtn.innerHTML = '<i class="material-icons">play_arrow</i>'
+        music.currentTime = 0
+    });
+}
+
+
+
+
+
+
+// volume
+var volIcon = document.querySelector('.volume')
+var volBox = document.querySelector('.volume-box')
+var volumeRange = document.querySelector('.volume-range')
+var volumeDown = document.querySelector('.volume-down')
+var volumeUp = document.querySelector('.volume-up')
+
+function handleVolume() {
+    volIcon.classList.toggle('active')
+    volBox.classList.toggle('active')
+}
+
+volumeDown.addEventListener('click', handleVolumeDown);
+volumeUp.addEventListener('click', handleVolumeUp);
+
+function handleVolumeDown() {
+    volumeRange.value = Number(volumeRange.value) - 20
+    music.volume = volumeRange.value / 100
+}
+function handleVolumeUp() {
+    volumeRange.value = Number(volumeRange.value) + 20
+    music.volume = volumeRange.value / 100
+}
+</script>
+<script>
+    setInterval(function() {
+        
+        
+        
+        
+     $.ajax({
+        url: 'https://barcelonahits.ml/Metadata.php',
+        success: function(data) {
+      
+         var textWithQuote = data;
+  
+  
+  
+      var t = textWithQuote.split('"')[1];
+      $(".artisttxt").html(t);
+      document.querySelector('title').textContent = t;
+        
+             $.getJSON("https://itunes.apple.com/search?term=" + t + "&limit=1&media=music&entity=song&callback=?", function (data) {
+
+                 var icon = document.getElementById("WallpaperIcon");
+                 var itunes = document.getElementById("itunes");
+                itunes.href = data.results[0].trackViewUrl;
+                icon.src = data.results[0].artworkUrl100;
+    
+    
+    
+                                  });
+
+
+
+                                }
+        });
+
+
+     $.ajax({
+   url: 'https://barcelonahits.ml/ESTAMOSDIRECTO.txt',
+   type: 'HEAD',
+   error: function() {
+      	$(".singer").hide();
+      	document.getElementById("shadowdirecto").style["boxShadow"]="20px 5px 40px #cf77f3, 0px 5px 40px #009bff, -20px 5px 40px #2ac9db;";
+   },
+   success: function() {
+     	$(".singer").show();
+     	document.getElementById("shadowdirecto").style["boxShadow"]="0px 0px 20px 20px #ff0000";
+   }
+}); 
+        
+        
+    }, 15000);
+</script>
+</body></html>
