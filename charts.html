@@ -1,48 +1,17 @@
-<!DOCTYPE HTML>
-<html lang="en-US">
-    <head>
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<style>div#container
-{
-    width:98.72vw;
-    height: 2244px;
-       /* if you don't want a scrollbar, set to hidden */
-    overflow-x:hidden;   /* hides horizontal scrollbar on newer browsers */
+<html>
+<head><style> iframe{
+    height: 100%;
 
-    /* resize and min-height are optional, allows user to resize viewable area */
-    -webkit-resize:vertical;
-    -moz-resize:vertical;
-  
-    min-height:317px;
-}
-
-iframe#embed
-{
-    width:118vmax;       /* set this to approximate width of entire page you're embedding */
-    height: 2283px;      /* determines where the bottom of the page cuts off */
-    margin-left: -486px; /* clipping left side of page */
-    margin-top: -141px;  /* clipping top of page */
-    overflow:hidden;
-
-    /* resize seems to inherit in at least Firefox */
-    -webkit-resize:none;
-    -moz-resize:none;
-    resize:none;
-    pointer-events: none;
-}
-body {
+overflow: hidden;
+    resize: none;
+   }body {
     display: block;
     margin: 0px;
 }</style>
-        <meta charset="UTF-8">
-       
-        <title>CHARTS</title>
-    </head>
-    <body>
-        
-		<div id="container">
-    <iframe id="embed" src="https://acharts.co/world_singles_top_40#chart_sheet"></iframe>
-</div>
-		
-    </body>
+   
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+<body >
+<iframe scrolling="no" id="h" src="https://acharts.co/world_singles_top_40#chart_sheet" frameBorder="0" width="100%"></div>
+
+</body>
 </html>
