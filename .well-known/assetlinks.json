@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.barcelona.hits",
+      "sha256_cert_fingerprints": [
+        "33:0C:DB:12:7D:A1:68:2D:27:42:71:27:73:9E:AB:32:DE:B5:72:65:FB:B6:41:7A:48:1B:B4:6D:6A:C4:7A:6F"
+      ]
+    }
+  }
+]
